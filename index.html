@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Feliz Aniversário, Amor!</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom, #ffe6f0, #fff0f5);
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      color: #800080;
+    }
+
+    h1 {
+      margin-top: 80px;
+      font-size: 3em;
+      animation: pulse 2s infinite;
+    }
+
+    p {
+      font-size: 1.5em;
+      width: 80%;
+      margin: 20px auto;
+    }
+
+    .balloons {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .balloon {
+      position: absolute;
+      width: 30px;
+      height: 40px;
+      background: red;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      animation: float 10s linear infinite;
+    }
+
+    .balloon::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      width: 2px;
+      height: 20px;
+      background: gray;
+      transform: translateX(-50%);
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100px);
+        opacity: 0;
+      }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+    }
+
+    .photos img {
+      width: 200px;
+      border-radius: 20px;
+      margin: 10px;
+      box-shadow: 0 0 10px #aaa;
+    }
+
+    .audio-control {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="balloons">
+    <!-- Geração de balões coloridos -->
+    <script>
+      const colors = ['#ff69b4', '#ff6347', '#ffd700', '#87cefa', '#dda0dd'];
+      for (let i = 0; i < 40; i++) {
+        const balloon = document.createElement('div');
+        balloon.className = 'balloon';
+        balloon.style.left = Math.random() * 100 + 'vw';
+        balloon.style.background = colors[Math.floor(Math.random() * colors.length)];
+        balloon.style.animationDuration = (5 + Math.random() * 5) + 's';
+        document.body.querySelector('.balloons').appendChild(balloon);
+      }
+    </script>
+  </div>
+
+  <div class="content">
+    <h1>Feliz Aniversário, Meu Amor! 🎉</h1>
+    <p>
+      Hoje é o dia de celebrar a vida da pessoa mais incrível que eu conheço.  
+      Você ilumina meus dias com seu sorriso, com seu carinho e com seu amor.  
+      Sou grato por cada segundo ao seu lado e por compartilhar essa jornada com você.  
+      Que este novo ano seja cheio de alegrias, saúde, conquistas e muito amor.  
+      Eu te amo infinitamente. Parabéns pelo seu dia! 🎂💖
+    </p>
+    <p>
+      Hoje vai ser uma festa
+      Bolo e guaraná
+      Muito doce pra você
+      É o seu aniversário
+      Vamos festejar
+      E os amigos receber
+      Mil felicidades e amor no coração
+      Que a sua vida seja sempre doce e emoção
+      Bate, bate palma que é hora de cantar
+      Agora todos juntos vamos lá
+      Parabéns
+      Parabéns
+      Hoje é o seu dia
+      Que dia mais feliz
+      Parabéns
+      Parabéns
+      Cante novamente
+      Que a gente pede bis
+      É pique, é pique
+      É pique, é pique, é pique
+      É hora, é hora
+      É hora, é hora, é hora
+      Rá ti bum🎂💖
+    </p>
+    <H3>PARABENS MEU AMOR !!!</H1>
+
+    <div class="photos">
+      <!-- Adicione suas fotos aqui -->
+      <img src="fotos/IMG-20250104-WA0021.jpg" alt="Nós dois">
+      <img src="fotos/IMG-20250115-WA0015.jpg" alt="Momentos especiais">
+      <img src="fotos/IMG-20250222-WA0034.jpg" alt="Momentos especiais">
+      <img src="fotos/Sem título.png" alt="Momentos especiais">
+      <img src="fotos/ddd.jpg" alt="Momentos especiais">
+      <img src="fotos/ggg.jpg" alt="Momentos especiais">
+    </div>
+  </div>
+
+  <!-- Música romântica (opcional) -->
+  <div class="audio-control">
+    <audio id="music" controls loop>
+      <source src="MUSICA/Xuxa - Parabéns da Xuxa (Álbum Xou da Xuxa) [Áudio Oficial].mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio.
+    </audio>
+  </div>
+
+</body>
+</html>

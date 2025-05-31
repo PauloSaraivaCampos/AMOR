@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Para o Amor da Minha Vida</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom, #ffcccc, #ffe6e6);
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      color: #b30000;
+    }
+
+    h1 {
+      margin-top: 80px;
+      font-size: 3em;
+      animation: pulse 2s infinite;
+    }
+
+    p {
+      font-size: 1.5em;
+      width: 80%;
+      margin: 20px auto;
+    }
+
+    .hearts {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: float 8s linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100px) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+    }
+
+    .photos img {
+      width: 200px;
+      border-radius: 20px;
+      margin: 10px;
+      box-shadow: 0 0 10px #aaa;
+    }
+
+    .audio-control {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hearts">
+    <!-- Geração de corações -->
+    <script>
+      for (let i = 0; i < 40; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = (5 + Math.random() * 5) + 's';
+        document.body.querySelector('.hearts').appendChild(heart);
+      }
+    </script>
+  </div>
+
+  <div class="content">
+    <h1>Minha Vida, Meu Amor ❤️</h1>
+    <p>
+      Desde que você entrou na minha vida, tudo mudou para melhor.  
+      Sua presença é luz, é paz, é o motivo do meu sorriso diário.  
+      Você é o presente mais precioso que a vida me deu.  
+      Te amo mais do que palavras podem expressar, e sou grato por cada instante ao seu lado.
+    </p>
+
+    <div class="photos">
+      <!-- Adicione suas fotos aqui -->
+      <img src="foto1.jpg" alt="Nós dois">
+      <img src="foto2.jpg" alt="Momentos especiais">
+    </div>
+  </div>
+
+  <!-- Música romântica (opcional) -->
+  <div class="audio-control">
+    <audio id="music" controls loop>
+      <source src="musica-romantica.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio.
+    </audio>
+  </div>
+
+</body>
+</html>
+
