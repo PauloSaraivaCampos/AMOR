@@ -88,18 +88,31 @@
       box-shadow: 0 0 10px #aaa;
     }
 
-    .audio-control {
+    #playBtn {
       position: fixed;
-      bottom: 20px;
-      left: 20px;
-      z-index: 10;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px 30px;
+      font-size: 18px;
+      background-color: #f39c12;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      z-index: 9999;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    audio {
+      display: none;
     }
   </style>
 </head>
 <body>
 
   <div class="balloons">
-    <!-- Geração de balões coloridos -->
+    <!-- Balões coloridos animados -->
     <script>
       const colors = ['#ff69b4', '#ff6347', '#ffd700', '#87cefa', '#dda0dd'];
       for (let i = 0; i < 40; i++) {
@@ -119,45 +132,52 @@
       Hoje é o dia de celebrar a vida da pessoa mais incrível que eu conheço.  
       Você ilumina meus dias com seu sorriso, com seu carinho e com seu amor.  
       Sou grato por cada segundo ao seu lado e por compartilhar essa jornada com você.  
-      Que este novo ano seja cheio de alegrias, saúde econquistas. 
+      Que este novo ano seja cheio de alegrias, saúde e conquistas.  
       Parabéns pelo seu dia! Meu amor 🎂💖
     </p>
     <p>
-      Hoje vai ser uma festa
-      Bolo e guaraná
-      Muito doce pra você
-      É o seu aniversário
-      Vamos festejar
-      E os amigos receber
-      Mil felicidades e amor no coração
-      Que a sua vida seja sempre doce e emoção
-      Bate, bate palma que é hora de cantar
-      Agora todos juntos vamos lá
-      Parabéns
+      Hoje vai ser uma festa  
+      Bolo e guaraná  
+      Muito doce pra você  
+      É o seu aniversário  
+      Vamos festejar  
+      E os amigos receber  
+      Mil felicidades e amor no coração  
+      Que a sua vida seja sempre doce e emoção  
+      Bate, bate palma que é hora de cantar  
+      Agora todos juntos vamos lá  
+      Parabéns  
       Parabéns 🎂💖
     </p>
-    <H3>PARABENS MEU AMOR !!!</H3>
+
+    <h3>PARABÉNS MEU AMOR !!!</h3>
 
     <div class="photos">
-      <!-- Adicione suas fotos aqui -->
       <img src="IMG-20250104-WA0021.jpg" alt="Nóis dois">
       <img src="IMG-20250115-WA0015.jpg" alt="Momentos especiais">
       <img src="IMG-20250222-WA0034.jpg" alt="Momentos especiais">
       <img src="Sem título.png" alt="Momentos especiais">
       <img src="ddd.jpg" alt="Momentos especiais">
       <img src="ggg.jpg" alt="Momentos especiais">
-
     </div>
   </div>
 
-  <!-- Música romântica (opcional) -->
-   <H3>Aperte o play</H3>
-  <div class="controle-de-audio">
-  <audio autoplay loop controls>
+  <!-- Botão para iniciar a música -->
+  <button id="playBtn" onclick="tocarMusica()">Clique para começar 🎶</button>
+
+  <!-- Música (escondida) -->
+  <audio id="musica" loop>
     <source src="parabens_xuxa_curto.mp3" type="audio/mpeg">
     Seu navegador não suporta áudio.
   </audio>
-</div>
+
+  <script>
+    function tocarMusica() {
+      const audio = document.getElementById('musica');
+      audio.play();
+      document.getElementById('playBtn').style.display = 'none';
+    }
+  </script>
 
 </body>
 </html>
